@@ -27,8 +27,11 @@ public class Controller implements Initializable {
     TextField email;
 
     public void addContact(){
+        if ( ! name.getText().isEmpty()
+                && (! number.getText().isEmpty() )
+                && (! email.getText().isEmpty() )){
         Contact newContact = new Contact( name.getText(), number.getText(), email.getText() );
-        contacts.add(newContact);
+        contacts.add(newContact);}
     }
     public void removeContact (){
         Contact contact = (Contact) list.getSelectionModel().getSelectedItem();
